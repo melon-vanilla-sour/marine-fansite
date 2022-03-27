@@ -5,14 +5,39 @@ import MenuComponent from '../components/menu'
 import Links from '../components/links'
 import Timeline from '../components/timeline'
 
-import { Fade } from '@chakra-ui/react'
-
 function HomePage() {
+  const profileRef = useRef()
+  const linksRef = useRef()
+  const coversRef = useRef()
+
+  const refs = useRef([])
+  const parts = [
+    {
+      name: Profile,
+    },
+    {
+      name: Links,
+    },
+  ]
+
+  const executeScroll = (ref) => {
+    if (!ref.current) return
+    ref.current.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div>
-      <Profile></Profile>
-      <Links></Links>
-      <MenuComponent></MenuComponent>
+      {parts.map((part, index) => {
+        const Component = part.name
+        return <Component innerRef={(el) => (refs.current[index] = el)}></Component>
+      })}
+      {/* <Profile innerRef={profileRef}></Profile>
+      <Links innerRef={linksRef}></Links> */}
+      <MenuComponent
+        profileRef={profileRef}
+        linksRef={linksRef}
+        handleClick={executeScroll}
+      ></MenuComponent>
       <Timeline></Timeline>
     </div>
   )

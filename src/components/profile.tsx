@@ -6,12 +6,8 @@ import ProfileInformation from './profile-information'
 
 export default function Profile(props) {
   const [picture, setPicture] = useState(1)
-  const profileRef = useRef()
-
-  const executeScroll = (ref) => {
-    if (!ref.current) return
-    ref.current.scrollIntoView({ behavior: 'smooth' })
-  }
+  const profileRef = props.innerRef
+  const handleClick = props.handleClick
 
   return (
     <div ref={profileRef}>
@@ -50,8 +46,6 @@ export default function Profile(props) {
         ></Image>
       </HStack>
       <ProfileInformation></ProfileInformation>
-
-      <button onClick={() => executeScroll(profileRef)}> Click to scroll </button>
     </div>
   )
 }
