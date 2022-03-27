@@ -2,8 +2,6 @@ import { Box, Menu, MenuButton, IconButton, MenuList, MenuItem } from '@chakra-u
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 export default function MenuComponent(props) {
-  const profileRef = props.profileRef
-  const linksRef = props.linksRef
   const refs = props.refs
   const handleClick = props.handleClick
 

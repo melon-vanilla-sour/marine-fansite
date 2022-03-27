@@ -6,10 +6,6 @@ import Links from '../components/links'
 import Timeline from '../components/timeline'
 
 function HomePage() {
-  const profileRef = useRef()
-  const linksRef = useRef()
-  const coversRef = useRef()
-
   const refs = useRef([])
   const parts = [
     {
@@ -31,14 +27,7 @@ function HomePage() {
         const Component = part.name
         return <Component innerRef={(el) => (refs.current[index] = el)}></Component>
       })}
-      {/* <Profile innerRef={profileRef}></Profile>
-      <Links innerRef={linksRef}></Links> */}
-      <MenuComponent
-        profileRef={profileRef}
-        linksRef={linksRef}
-        refs={refs}
-        handleClick={executeScroll}
-      ></MenuComponent>
+      <MenuComponent refs={refs} handleClick={executeScroll}></MenuComponent>
       <Timeline></Timeline>
     </div>
   )
