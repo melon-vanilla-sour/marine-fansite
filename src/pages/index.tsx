@@ -21,8 +21,8 @@ function HomePage() {
   ]
 
   const executeScroll = (ref) => {
-    if (!ref.current) return
-    ref.current.scrollIntoView({ behavior: 'smooth' })
+    if (!ref) return
+    ref.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -36,6 +36,7 @@ function HomePage() {
       <MenuComponent
         profileRef={profileRef}
         linksRef={linksRef}
+        refs={refs}
         handleClick={executeScroll}
       ></MenuComponent>
       <Timeline></Timeline>

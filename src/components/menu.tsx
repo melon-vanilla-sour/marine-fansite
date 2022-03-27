@@ -4,6 +4,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 export default function MenuComponent(props) {
   const profileRef = props.profileRef
   const linksRef = props.linksRef
+  const refs = props.refs
   const handleClick = props.handleClick
 
   return (
@@ -17,10 +18,10 @@ export default function MenuComponent(props) {
           borderRadius="full"
         />
         <MenuList>
-          <MenuItem value="profile" onClick={() => handleClick(profileRef)}>
+          <MenuItem value="profile" onClick={() => handleClick(refs.current[0])}>
             Profile
           </MenuItem>
-          <MenuItem value="links" onClick={() => handleClick(linksRef)}>
+          <MenuItem value="links" onClick={() => handleClick(refs.current[1])}>
             Official Links
           </MenuItem>
           <MenuItem value="covers">Covers</MenuItem>
