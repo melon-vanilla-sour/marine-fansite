@@ -4,11 +4,11 @@ export default function ProfileInformation() {
   return (
     <div>
       <Center>
-        <Heading as="h3" size="2xl" isTruncated>
+        <Heading as="h3" size="1xl" isTruncated marginY={3}>
           Houshou Marine
         </Heading>
       </Center>
-      <Table variant="simple" colorScheme="facebook" size="sm">
+      <Table variant="simple" colorScheme="facebook" size="sm" marginBottom={3} marginX={2}>
         <Tbody>
           <Tr>
             <Td>Birthday</Td>
@@ -25,7 +25,7 @@ export default function ProfileInformation() {
           <Tr>
             <Td>Hashtags</Td>
             <Td>
-              #マリン航海記 <br /> #マリンのお宝
+              Stream: #マリン航海記 <br /> Fan Art: #マリンのお宝
             </Td>
           </Tr>
           <Tr>
