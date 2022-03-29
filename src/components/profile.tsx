@@ -12,35 +12,37 @@ export default function Profile(props) {
   return (
     <div ref={profileRef}>
       <Center>
-        <Heading as="h2" size="3xl" color="#d14c3a" isTruncated>
+        <Heading as="h2" size="3xl" isTruncated>
           Profile
         </Heading>
       </Center>
       {picture == 1 ? (
         <Fade in={picture == 1}>
-          <Image boxSize="100%" objectFit="contain" src="/assets/profile1.png" alt="profile 1" />
+          <Center>
+            <Image height="621px" objectFit="contain" src="/assets/profile1.png" alt="profile 1" />
+          </Center>
         </Fade>
       ) : (
-        <Center>
-          <Fade in={picture == 2}>
+        <Fade in={picture == 2}>
+          <Center>
             <Image height="621px" objectFit="contain" src="/assets/profile2.png" alt="profile 2" />
-          </Fade>
-        </Center>
+          </Center>
+        </Fade>
       )}
       <HStack marginX={2} justifyContent="center">
         <Image
           boxSize="100px"
-          objectFit="cover"
+          objectFit="contain"
           borderRadius="5px"
-          border="2px"
+          border={picture == 1 ? '2px' : '0px'}
           src="/assets/profile1.png"
           onClick={() => setPicture(1)}
         ></Image>
         <Image
           boxSize="100px"
-          objectFit="cover"
+          objectFit="contain"
           borderRadius="5px"
-          border="2px"
+          border={picture == 2 ? '2px' : '0px'}
           src="/assets/profile2.png"
           onClick={() => setPicture(2)}
         ></Image>
