@@ -4,6 +4,8 @@ import Profile from '../components/profile'
 import MenuComponent from '../components/menu'
 import Links from '../components/links'
 import Timeline from '../components/timeline'
+import Music from '../components/music'
+import Streaming from '../components/streaming'
 
 function HomePage() {
   const refs = useRef([])
@@ -12,7 +14,16 @@ function HomePage() {
       name: Profile,
     },
     {
+      name: Streaming,
+    },
+    {
+      name: Music,
+    },
+    {
       name: Links,
+    },
+    {
+      name: Timeline,
     },
   ]
 
@@ -28,7 +39,6 @@ function HomePage() {
         return <Component innerRef={(el) => (refs.current[index] = el)}></Component>
       })}
       <MenuComponent refs={refs} handleClick={executeScroll}></MenuComponent>
-      <Timeline></Timeline>
     </div>
   )
 }

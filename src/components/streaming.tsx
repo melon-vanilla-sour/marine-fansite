@@ -1,14 +1,13 @@
 import { Heading, Image, Center, HStack, Fade } from '@chakra-ui/react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Timeline(props) {
-  const timelineRef = props.innerRef
-
+export default function Streaming(props) {
+  const linksRef = props.innerRef
   return (
-    <div ref={timelineRef}>
+    <div ref={linksRef}>
       <Center>
         <Heading as="h2" size="3xl">
-          Timeline
+          Streaming
         </Heading>
       </Center>
     </div>
