@@ -6,8 +6,10 @@ export default function Links(props) {
   return (
     <div ref={linksRef}>
       <Center>
-        <Heading as="h2" size="3xl" color="#d14c3a" isTruncated>
-          Official Links
+        <Heading as="h2" size="3xl">
+          Official
+          <br />
+          Links
         </Heading>
       </Center>
     </div>
