@@ -22,27 +22,23 @@ export default function Profile(props) {
           </Heading>
         </Center>
         {picture == 1 ? (
-          <Fade in={picture == 1}>
-            <Center>
-              <Image
-                maxHeight="621px"
-                objectFit="contain"
-                src="/assets/profile1.png"
-                alt="profile 1"
-              />
-            </Center>
-          </Fade>
+          <Center>
+            <Image
+              maxHeight="621px"
+              objectFit="contain"
+              src="/assets/profile1.png"
+              alt="profile 1"
+            />
+          </Center>
         ) : (
-          <Fade in={picture == 2}>
-            <Center>
-              <Image
-                maxHeight="621px"
-                objectFit="contain"
-                src="/assets/profile2.png"
-                alt="profile 2"
-              />
-            </Center>
-          </Fade>
+          <Center>
+            <Image
+              maxHeight="621px"
+              objectFit="contain"
+              src="/assets/profile2.png"
+              alt="profile 2"
+            />
+          </Center>
         )}
         <HStack marginX={2} marginBottom={2} justifyContent="center">
           <Image
