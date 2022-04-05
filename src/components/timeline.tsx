@@ -7,7 +7,7 @@ export default function Timeline(props) {
   return (
     <div ref={timelineRef}>
       <Center>
-        <Heading as="h2" size="3xl">
+        <Heading as="h2" size="3xl" isTruncated>
           Timeline
         </Heading>
       </Center>

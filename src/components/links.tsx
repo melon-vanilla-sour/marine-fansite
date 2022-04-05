@@ -6,7 +6,7 @@ export default function Links(props) {
   return (
     <div ref={linksRef}>
       <Center>
-        <Heading as="h2" size="3xl">
+        <Heading as="h2" size="3xl" isTruncated>
           Official
           <br />
           Links

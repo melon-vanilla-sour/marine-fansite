@@ -22,7 +22,7 @@ export default function Music(props) {
   return (
     <div ref={linksRef}>
       <Center>
-        <Heading as="h2" size="3xl">
+        <Heading as="h2" size="3xl" isTruncated>
           Music
         </Heading>
       </Center>

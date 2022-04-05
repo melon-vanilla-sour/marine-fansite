@@ -1,4 +1,4 @@
-import { Heading, Center, HStack, Fade, Box } from '@chakra-ui/react'
+import { Heading, Center, HStack, Slide, Fade, Box } from '@chakra-ui/react'
 import { useState, useEffect, useRef } from 'react'
 import { Parallax } from 'react-parallax'
 import Image from 'next/image'
@@ -15,17 +15,25 @@ export default function Profile(props) {
   return (
     <div ref={profileRef}>
       <Center>
-        <Heading as="h2" size="3xl">
+        <Heading as="h2" size="3xl" isTruncated>
           Profile
         </Heading>
       </Center>
+
       <Center height="620px" position="relative">
-        {picture == 1 ? (
-          <Image src={profile1} alt="profile 1" layout="fill" objectFit="contain" />
-        ) : (
-          <Image src={profile2} alt="profile 2" layout="fill" objectFit="contain" />
-        )}
+        <Fade in={picture == 1}>
+          <div>
+            <Image src={profile1} alt="profile 1" layout="fill" objectFit="contain" />
+          </div>
+        </Fade>
+
+        <Fade in={picture == 2}>
+          <div>
+            <Image src={profile2} alt="profile 2" layout="fill" objectFit="contain" />
+          </div>
+        </Fade>
       </Center>
+
       <HStack marginX={2} marginBottom={2} justifyContent="center">
         <Box
           width="100px"
