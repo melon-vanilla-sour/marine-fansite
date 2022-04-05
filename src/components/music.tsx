@@ -22,22 +22,42 @@ export default function Music(props) {
   return (
     <div ref={linksRef}>
       <Center>
-        <Heading as="h2" size="3xl" isTruncated>
+        <Heading as="h2" size="3xl">
           Music
         </Heading>
       </Center>
       <Swiper
-        slidesPerView={1} //一度に表示するスライドの数
-        pagination={{
-          clickable: true,
-        }} //　何枚目のスライドかを示すアイコン、スライドの下の方にある
-        navigation //スライドを前後させるためのボタン、スライドの左右にある
+        slidesPerView={1.5}
+        centeredSlides={true}
+        spaceBetween={20}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        navigation
         loop={true}
+        effect="flip"
+        breakpoints={{
+          800: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+        }}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
       >
         {images.map((src: string, index: number) => {
           return (
             <SwiperSlide key={`${index}`}>
-              <Image src={src} layout="responsive" width={414} height={414} alt="test_image" />
+              <Center>
+                <Image src={src} width="400" height="400" alt={`music${index}`} />
+              </Center>
             </SwiperSlide>
           )
         })}

@@ -16,19 +16,22 @@ export default function MenuComponent(props) {
           borderRadius="full"
         />
         <MenuList>
-          <MenuItem value="profile" onClick={() => handleClick(refs.current[0])}>
+          <MenuItem value="top" onClick={() => handleClick(refs.current[0])}>
+            Top
+          </MenuItem>
+          <MenuItem value="profile" onClick={() => handleClick(refs.current[1])}>
             Profile
           </MenuItem>
-          <MenuItem value="streaming" onClick={() => handleClick(refs.current[1])}>
+          <MenuItem value="streaming" onClick={() => handleClick(refs.current[2])}>
             Streaming
           </MenuItem>
-          <MenuItem value="music" onClick={() => handleClick(refs.current[2])}>
+          <MenuItem value="music" onClick={() => handleClick(refs.current[3])}>
             Music
           </MenuItem>
-          <MenuItem value="links" onClick={() => handleClick(refs.current[3])}>
+          <MenuItem value="links" onClick={() => handleClick(refs.current[4])}>
             Official Links
           </MenuItem>
-          <MenuItem value="timeline" onClick={() => handleClick(refs.current[4])}>
+          <MenuItem value="timeline" onClick={() => handleClick(refs.current[5])}>
             Timeline
           </MenuItem>
         </MenuList>

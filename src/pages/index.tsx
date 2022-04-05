@@ -1,15 +1,23 @@
 import { useRef, useState } from 'react'
 
+import Image from 'next/image'
+
+import { Box } from '@chakra-ui/react'
+
 import Profile from '../components/profile'
 import MenuComponent from '../components/menu'
 import Links from '../components/links'
 import Timeline from '../components/timeline'
 import Music from '../components/music'
 import Streaming from '../components/streaming'
+import LP from '../components/lp'
 
 function HomePage() {
   const refs = useRef([])
   const parts = [
+    {
+      name: LP,
+    },
     {
       name: Profile,
     },

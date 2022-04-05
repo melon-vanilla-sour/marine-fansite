@@ -1,6 +1,9 @@
-import { Heading, Image, Center, HStack, Fade } from '@chakra-ui/react'
+import { Heading, Center, HStack, Fade, Box } from '@chakra-ui/react'
 import { useState, useEffect, useRef } from 'react'
 import { Parallax } from 'react-parallax'
+import Image from 'next/image'
+import profile1 from '../../public/assets/profile1.png'
+import profile2 from '../../public/assets/profile2.png'
 
 import ProfileInformation from './profile-information'
 
@@ -11,56 +14,41 @@ export default function Profile(props) {
 
   return (
     <div ref={profileRef}>
-      <Parallax
-        // bgImage="/assets/profile1-transparent.png"
-        bgImageAlt="marine-background"
-        strength={500}
-      >
-        <Center>
-          <Heading as="h2" size="3xl" isTruncated>
-            Profile
-          </Heading>
-        </Center>
+      <Center>
+        <Heading as="h2" size="3xl">
+          Profile
+        </Heading>
+      </Center>
+      <Center height="620px" position="relative">
         {picture == 1 ? (
-          <Center>
-            <Image
-              maxHeight="621px"
-              objectFit="contain"
-              src="/assets/profile1.png"
-              alt="profile 1"
-            />
-          </Center>
+          <Image src={profile1} alt="profile 1" layout="fill" objectFit="contain" />
         ) : (
-          <Center>
-            <Image
-              maxHeight="621px"
-              objectFit="contain"
-              src="/assets/profile2.png"
-              alt="profile 2"
-            />
-          </Center>
+          <Image src={profile2} alt="profile 2" layout="fill" objectFit="contain" />
         )}
-        <HStack marginX={2} marginBottom={2} justifyContent="center">
-          <Image
-            boxSize="100px"
-            objectFit="contain"
-            borderRadius="5px"
-            border={picture == 1 ? '1px' : '0px'}
-            src="/assets/profile1.png"
-            onClick={() => setPicture(1)}
-            bgColor="white"
-          ></Image>
-          <Image
-            boxSize="100px"
-            objectFit="contain"
-            borderRadius="5px"
-            border={picture == 2 ? '1px' : '0px'}
-            src="/assets/profile2.png"
-            onClick={() => setPicture(2)}
-            bgColor="white"
-          ></Image>
-        </HStack>
-      </Parallax>
+      </Center>
+      <HStack marginX={2} marginBottom={2} justifyContent="center">
+        <Box
+          width="100px"
+          height="100px"
+          position="relative"
+          borderRadius="5px"
+          border={picture == 1 ? '2px' : '0px'}
+          bgColor="white"
+        >
+          <Image src={profile1} onClick={() => setPicture(1)} layout="fill" objectFit="contain" />
+        </Box>
+        <Box
+          width="100px"
+          height="100px"
+          position="relative"
+          borderRadius="5px"
+          border={picture == 2 ? '2px' : '0px'}
+          bgColor="white"
+        >
+          <Image src={profile2} onClick={() => setPicture(2)} layout="fill" objectFit="contain" />
+        </Box>
+      </HStack>
+
       <ProfileInformation></ProfileInformation>
     </div>
   )
